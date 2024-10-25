@@ -23,10 +23,15 @@ public with sharing class DemoCardController {
             con.AccountId = acc.Id;
             con.LastName = 'Arun';
             Insert con;
+            getBillingAddress(acc.Id);
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
     }
 
     
+
+    public static void getBillingAddress(String accId){
+        String id = accId;
+    }
 }
