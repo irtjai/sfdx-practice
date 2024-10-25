@@ -17,6 +17,7 @@ public with sharing class DemoCardController {
             acc.Site = 'Test';
             acc.BillingAddress = 'Chennai';
             Update acc;
+            getBillingAddress(acc.Id);
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
@@ -37,5 +38,9 @@ public with sharing class DemoCardController {
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
+    }
+
+    public static void getBillingAddress(String accId){
+        String id = accId;
     }
 }
