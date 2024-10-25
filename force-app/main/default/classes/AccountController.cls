@@ -1,14 +1,4 @@
-public with sharing class DemoCardController {
-    
-    @AuraEnabled
-    public static List<Account> getAccounts(){
-        try {
-            return [SELECT Id, Name,AccountNumber, Site From Account];
-        } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
-        }
-    }
-
+public with sharing class AccountController {
     @AuraEnabled
     public static void updateAccount(String accId)){
         try {
@@ -23,9 +13,4 @@ public with sharing class DemoCardController {
             throw new AuraHandledException(e.getMessage());
         }
     }
-
-    public static void helperMethod(){
-        system.debug('Helper method added..');
-    }
-
 }
