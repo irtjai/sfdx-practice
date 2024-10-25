@@ -14,6 +14,7 @@ public with sharing class DemoCardController {
         try {
             Account acc = new Account(Id=accId);
             acc.Name = 'Company Acc';
+            acc.BillingAddress = 'Chennai';
             Update acc;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
