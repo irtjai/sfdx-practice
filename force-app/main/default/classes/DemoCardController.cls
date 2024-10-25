@@ -16,16 +16,12 @@ public with sharing class DemoCardController {
             acc.Name = 'Company Acc';
             acc.Site = 'Test';
             acc.BillingAddress = 'Mumbai';
-            acc.AccountSource = 'Other';
+            acc.Industry = 'Other';
             Update acc;
 
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
-    }
-
-    public static void helperMethod(){
-        system.debug('Helper method added..');
-    }
+    }   
 
 }
