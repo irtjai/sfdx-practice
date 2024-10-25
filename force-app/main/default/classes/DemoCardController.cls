@@ -8,4 +8,13 @@ public with sharing class DemoCardController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled
+    public static List<contact> getContacts(){
+        try {
+            return [SELECT Id, LastName, FirstName From Contact];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
