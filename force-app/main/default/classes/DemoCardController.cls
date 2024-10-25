@@ -19,10 +19,6 @@ public with sharing class DemoCardController {
             acc.AccountSource = 'Other';
             Update acc;
 
-            contact con = new contact();
-            con.AccountId = acc.Id;
-            con.LastName = 'Arun';
-            Insert con;
             getBillingAddress(acc.Id);
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
@@ -32,4 +28,10 @@ public with sharing class DemoCardController {
     public static void getBillingAddress(String accId){
         String id = accId;
     }
+
+    public static void getSiteName(String accId){
+        String id = accId;
+    }
+
+
 }
