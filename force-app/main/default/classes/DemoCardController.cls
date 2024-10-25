@@ -15,30 +15,21 @@ public with sharing class DemoCardController {
             Account acc = new Account(Id=accId);
             acc.Name = 'Company Acc';
             acc.Site = 'Test';
-            acc.BillingAddress = 'Chennai';
+            acc.BillingAddress = 'Mumbai';
+            acc.AccountSource = 'Other';
             Update acc;
+
+            contact con = new contact();
+            con.AccountId = acc.Id;
+            con.LastName = 'Arun';
+            Insert con;
             getBillingAddress(acc.Id);
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
     }
 
-    @AuraEnabled
-    public static void sendEmail(){
-        try {
-            system.debug('Send  email to customer...');
-        } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
-        }
-    }
     
-    public static void getCardApplication(){
-        try {
-            system.debug('Get card application ...');
-        } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
-        }
-    }
 
     public static void getBillingAddress(String accId){
         String id = accId;
