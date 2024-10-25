@@ -19,4 +19,13 @@ public with sharing class DemoCardController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled
+    public static void sendEmail(){
+        try {
+            system.debug('Send  email to customer...');
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
