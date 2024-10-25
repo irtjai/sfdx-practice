@@ -29,8 +29,6 @@ public with sharing class DemoCardController {
         }
     }
 
-    
-
     public static void getBillingAddress(String accId){
         String id = accId;
     }
