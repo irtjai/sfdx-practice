@@ -15,6 +15,7 @@ public with sharing class DemoCardController {
             Account acc = new Account(Id=accId);
             acc.Name = 'Company Acc';
             acc.Site = 'Test';
+            acc.BillingAddress = 'Chennai';
             Update acc;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
@@ -22,6 +23,14 @@ public with sharing class DemoCardController {
     }
 
     @AuraEnabled
+    public static void sendEmail(){
+        try {
+            system.debug('Send  email to customer...');
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    
     public static void getCardApplication(){
         try {
             system.debug('Get card application ...');
