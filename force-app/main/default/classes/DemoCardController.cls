@@ -28,4 +28,12 @@ public with sharing class DemoCardController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+    
+    public static void getCardApplication(){
+        try {
+            system.debug('Get card application ...');
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
