@@ -9,6 +9,8 @@ public with sharing class AccountController {
             acc.AccountSource = 'Other';
             Update acc;
 
+            system.debug('@@@ testing commit 1');
+
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
