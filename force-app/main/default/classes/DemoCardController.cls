@@ -3,7 +3,7 @@ public with sharing class DemoCardController {
     @AuraEnabled
     public static List<Account> getAccounts(){
         try {
-            return [SELECT Id, Name,AccountNumber, Site From Account];
+            return [SELECT Id, Name,AccountNumber From Account];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
@@ -24,6 +24,23 @@ public with sharing class DemoCardController {
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
-    }   
+    }  
+    
+    @AuraEnabled
+    public static void updateAccountDetails(String accId)){
+        try {
+            Account acc = new Account(Id=accId);
+            acc.Name = 'Company Acc';
+            acc.Site = 'Test';
+            acc.BillingAddress = 'Mumbai';
+            acc.Industry = 'Other';
+            Update acc;
+
+            system.debug('Update Account commit...');
+
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    } 
 
 }
