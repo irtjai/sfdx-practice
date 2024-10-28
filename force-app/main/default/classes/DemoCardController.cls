@@ -19,6 +19,8 @@ public with sharing class DemoCardController {
             acc.Industry = 'Other';
             Update acc;
 
+            system.debug('Update Account commit...');
+
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
