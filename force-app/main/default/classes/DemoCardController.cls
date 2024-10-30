@@ -10,16 +10,16 @@ public with sharing class DemoCardController {
     }
 
     @AuraEnabled
-    public static void updateAccount(String accId)){
+    public static void CreateAccount(){
         try {
-            Account acc = new Account(Id=accId);
+            Account acc = new Account();
             acc.Name = 'Company Acc';
             acc.Site = 'Test';
             acc.BillingAddress = 'Mumbai';
             acc.Industry = 'Other';
-            Update acc;
+            Insert acc;
 
-            system.debug('Update Account commit...');
+            system.debug('Insert Account commit...');
 
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
@@ -27,7 +27,7 @@ public with sharing class DemoCardController {
     }  
     
     @AuraEnabled
-    public static void updateAccountDetails(String accId)){
+    public static void updateAccountInfo(String accId)){
         try {
             Account acc = new Account(Id=accId);
             acc.Name = 'Company Acc';
@@ -36,7 +36,7 @@ public with sharing class DemoCardController {
             acc.Industry = 'Other';
             Update acc;
 
-            system.debug('Update Account commit...');
+            system.debug('Update Account Info...');
 
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
