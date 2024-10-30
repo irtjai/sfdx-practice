@@ -43,4 +43,8 @@ public with sharing class DemoCardController {
         }
     } 
 
+    public static void getHelper(){
+        system.debug('@@@@@ Helper method added.');
+    }
+
 }
