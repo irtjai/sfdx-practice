@@ -10,6 +10,8 @@ public with sharing class AccountController {
             Update acc;
 
             system.debug('@@@ testing commit 1');
+            system.debug('@@@ testing commit 2');
+            system.debug('@@@ testing commit 3');
 
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
