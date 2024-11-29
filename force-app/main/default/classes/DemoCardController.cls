@@ -9,6 +9,7 @@ public with sharing class DemoCardController {
         }
     }
 
+    // create new account
     @AuraEnabled
     public static void CreateAccount(){
         try {
